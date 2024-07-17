@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('tasks')->group(function () {
     Route::controller(TasksController::class)->group(function () {
         Route::post('/', 'create');
+        // Route::post('/', 'store');   /*usando a rota para teste automatizados 'store' */
         Route::get('/', 'index');
         Route::get('/{tasks}', 'show');
         Route::put('/{tasks}', 'update');
